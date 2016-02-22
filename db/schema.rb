@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160222142745) do
+ActiveRecord::Schema.define(version: 20160222143201) do
 
   create_table "organisations", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -19,4 +19,14 @@ ActiveRecord::Schema.define(version: 20160222142745) do
     t.datetime "updated_at",             null: false
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string   "name",            limit: 255
+    t.integer  "organisation_id", limit: 4
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
+
+  add_index "users", ["organisation_id"], name: "index_users_on_organisation_id", using: :btree
+
+  add_foreign_key "users", "organisations"
 end
