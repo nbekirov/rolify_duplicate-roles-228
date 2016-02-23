@@ -39,6 +39,7 @@ group :development, :test do
   gem 'byebug'
   gem 'pry'
   gem 'pry-rails'
+  gem 'active_record_query_trace'
 end
 
 group :development do
