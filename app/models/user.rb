@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
 
   after_create :set_default_role
 
-  protected
+  private
 
   def set_default_role
     self.add_role :default
