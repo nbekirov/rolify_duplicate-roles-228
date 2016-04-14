@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
-  rolify
   belongs_to :organisation
+  rolify
 
   after_create :set_default_role
 
